@@ -44,7 +44,13 @@
 
         <button type="submit">Them</button>
     </form>
+    <form method="post">
+        <label>ID: {{ id }}</label><br>
+        <input type="text" name="name" placeholder="Loai san pham"><br>
+        <button type="submit">them</button>
+    </form>
     <br>
     <a href="{{ url_for('home') }}" class="return">Ve trang chu</a>
+
 </body>
 </html>

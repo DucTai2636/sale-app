@@ -71,6 +71,18 @@ def products_detail(product_id):
     return render_template('details.html',
                            product=product)
 
+@app.route("/add_category", methods=['POST', 'GET'])
+def add_category():
+    if request.method == 'POST':
+        new_id = utils.get_new_cate_id()
+        name = request.form['name']
+        utils.add_new_category(str(new_id),name)
+        return redirect('/')
+
+    new_id = utils.get_new_cate_id()
+    return render_template('add_news.html',
+                           id = new_id)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

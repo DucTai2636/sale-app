@@ -1,8 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from saleapp import db
+from saleapp import db, app
 from datetime import datetime
-
 
 class BaseModel(db.Model):
     __abstract__ = True
@@ -13,6 +12,8 @@ class Category(BaseModel):
     name = Column(String(20), nullable=False)
     products = relationship('Product', backref='category', lazy=True)
 
+    def __str__(self):
+        return  self.name
 
 
 
@@ -26,3 +27,10 @@ class Product(BaseModel):
     active = Column(Boolean, default=True)
     created_date = Column(DateTime, default=datetime.now())
     category_id = Column(Integer, ForeignKey(Category.id), nullable=False)
+
+    def __str__(self):
+        return self.name
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()

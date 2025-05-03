@@ -1,4 +1,6 @@
 import json,os
+from os import write
+from flask import current_app as app
 from saleapp import app
 
 
@@ -67,5 +69,38 @@ def get_new_product_id():
     else:
         return max(int(p['id']) for p in products) + 1
 
+def show_json(path):
+    with open(path, encoding='UTF-8') as f:
+        return json.load(f)
 
-# thêm phần thêm phân loại sản phẩm
+def write_json(path,data):
+    with open(path, 'w', encoding='UTF-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+def load_categories():
+    path = os.path.join(app.root_path, 'data/categories.json')
+    return read_json(path)
+
+def get_new_cate_id():
+    categories = load_categories()
+    if not categories:
+        return 1
+    else:
+        return max(int(c['id']) for c in categories) + 1
+
+def add_new_category(id,name):
+    path = os.path.join(app.root_path, 'data/categories.json')
+    categories = read_json(path)
+
+    for c in categories:
+        if c['id'] == id:
+            print(f"Category ID {id} da ton tai")
+            return
+
+    categories.append({
+        'id': id,
+        'name': name
+    })
+
+    write_json(path, categories)
+    print(f"da them category: {name}")
