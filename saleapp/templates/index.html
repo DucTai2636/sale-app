@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1 class="subject">Welcome to my Website</h1>
+    <div class="button-list">
+        <ul>
+            <li><a href="{{ url_for('product_list') }}"  class="button">Tat ca san pham </a></li>
+            {% for c in categories %}
+            <li><a href="{{ url_for('product_list', category_id = c.id) }}"  class="button">{{ c.name }}</a></li>
+            {% endfor %}
+            </ul>
+        <ul>
+            <p class="comment">------------->ADMIN<-------------</p>
+        <a href="{{ url_for('add_products') }}" class="ab">Them san pham moi</a>
+            {% for p in products %}
+                <li>{{ p.name }} - Gia tien: {{ p.price }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+</body>
+</html>

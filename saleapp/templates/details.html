@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <h1 class="subject">Chi tiết sản phẩm</h1>
+  <div class="container_flex">
+      <div class="product-image">
+          <img src="{{ url_for('static', filename=(product.image or 'images/default.png')) }}" alt="{{ product.name }}">
+      </div>
+      <div class="product-detail">
+          <h2>{{ product.name }}</h2>
+          <table>
+              <tr>
+                  <td>Thong tin san pham</td>
+                <td>{{ product.description }}</td>
+              </tr>
+              <tr>
+                  <td>Gia</td>
+                <td>{{ "{:,}".format(product.price) }} VND</td>
+              </tr>
+          </table>
+      </div>
+  </div>
+</body>
+</html>

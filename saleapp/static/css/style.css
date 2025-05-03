@@ -1,0 +1,280 @@
+/* ======================== */
+/* 1. Thiết lập chung      */
+/* ======================== */
+* {
+    font-family: Tahoma;
+}
+
+body {
+    background-color: #fffff;
+    color: black;
+}
+
+/* ======================== */
+/* 2. Tiêu đề               */
+/* ======================== */
+h1.subject {
+    text-align: center;
+}
+
+/* ======================== */
+/* 3. Container             */
+/* ======================== */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ======================== */
+/* 4. Bố cục linh hoạt      */
+/* ======================== */
+.flex {
+    display: flex;
+}
+
+/* ======================== */
+/* 5. Bảng trên trang index */
+/* ======================== */
+table.table {
+    width: 1300px;
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+table.table th, table.table td {
+    text-align: left; /* can trai doan van ban*/
+    vertical-align: top; /* can noi dung len tren*/
+    word-wrap: break-word; /* ngat dong neu noi dung dai*/
+}
+
+table.table th {
+    background-color: #fffff;
+    font-weight: bolder; /* do dam nhat cua chu */
+                        /* normal: binh thuong
+                            bold: dam
+                            lighter: nhat
+                            bolder: dam hon chu goc
+                            100-900: chi so cang to, chu cang dam */
+}
+
+table.table img {
+    display: block;
+}
+
+/* an cot*/
+table.table td:nth-child(5),
+table.table th:nth-child(5) {
+    display: none;
+}
+
+table.table td:nth-child(2),
+table.table th:nth-child(2) {
+    text-align: center;
+}
+
+/* ======================== */
+/* Khung tìm kiếm          */
+/* ======================== */
+.input {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+.submit {
+    padding: 10px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #000000b3;
+}
+
+/* ======================== */
+/* Form tìm kiếm           */
+/* ======================== */
+form {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 100px 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 700px;
+}
+
+form.custom {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000) !important;
+    color: white;
+    padding: 30px 40px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    width: 1200px !important;
+}
+
+/* ======================== */
+/* Ảnh sản phẩm            */
+/* ======================== */
+.product-image img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Chi tiết sản phẩm       */
+.product-detail {
+    display: flex;
+    flex-decoration: column;
+}
+
+.product-detail h2 {
+    flex-grow: 0;
+}
+
+/* ======================== */
+/* Bảng chung              */
+/* ======================== */
+table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* ======================== */
+/* Nút quay trở lại        */
+/* ======================== */
+a.return {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+/* ======================== */
+/* Các nút ở trang chủ     */
+/* ======================== */
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column; /* Thay đổi thành column để sắp xếp theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các nút theo chiều dọc */
+    background-color: black;
+    width: 145px;
+    transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+/* Khung các nút khi hover */
+.button-list:hover {
+    width: 280px;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.button-list > ul > li {
+    margin: 0; /* Loại bỏ margin không cần thiết */
+}
+
+/* Chi tiết các nút */
+.button {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Chuyển thành block để mỗi nút chiếm một dòng */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Thêm margin dưới mỗi nút để tạo khoảng cách */
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* ======================== */
+/* Animation cho nút       */
+/* ======================== */
+.button::before {
+    contentL '\25BA';
+    positionL absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    opacity: 1;
+    transition:opacity 0.3s ease-in-out;
+}
+
+.button:hover:before {
+    opacity: 0;
+}
+
+/* ======================== */
+/* Nút 'ab' tùy chỉnh      */
+/* ======================== */
+.ab {
+    display: inline-block;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 0px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
+    color: white;
+    border-radius: 10px;
+}
+
+/* ======================== */
+/* Danh sách sản phẩm      */
+/* ======================== */
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.product-list li {
+    margin-bottom: 5px;
+}
+
+/* ======================== */
+/* Bình luận               */
+/* ======================== */
+.comment {
+    color: white;
+}

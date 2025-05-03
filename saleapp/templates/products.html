@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List product</title>
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1 class="subject">Danh sach</h1>
+    <div class="container">
+        <hr>
+        <form class="form">
+            <input class="input" name="keyword" type="text" placeholder="Nhap tu khoa">
+            <input class="input" name="from_price" type="number" placeholder="Nhap gia thap nhat">
+            <input class="input" name="to_price" type="number" placeholder="Nhap gia cao nhat">
+            <input class="submit" type="submit" value="OK">
+        </form>
+        <hr>
+        <table border="1" class="table">
+            <tr>
+                <th>Anh san pham</th>
+                <th class="id">Ma san pham</th>
+                <th>Ten san pham</th>
+                <th>Mo ta san pham</th>
+                <th>Dia chi(sau này sẽ được ẩn)</th>
+                <th>Gia cua san pham</th>
+            </tr>
+            {% for p in products %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('products_detail', product_id=p.id) }}">
+                        <img src="{{ url_for('static',filename= p.image) }}" width="100" alt="{{ p.name}}">
+                    </a>
+                </td>
+                <td class="id">{{ p.id}}</td>
+                <td>{{ p.name}}</td>
+                <td>{{ p.description}}</td>
+                <td>{{ p.image }}</td>
+                <td>{{ "{:,}".format(p.price) }}VND</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+
+<!--add thêm phần thêm sản phầm ngoài vào-->
