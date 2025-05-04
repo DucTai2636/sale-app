@@ -1,6 +1,4 @@
-/* ======================== */
-/* 1. Thiết lập chung      */
-/* ======================== */
+/* 1. Thiết lập chung */
 * {
     font-family: Tahoma;
 }
@@ -8,18 +6,16 @@
 body {
     background-color: #fffff;
     color: black;
+    margin-left: 80px; /* Tạo khoảng trắng bên trái để sidebar không che nội dung */
+    transition: margin-left 0.1s ease-in-out; /* Hiệu ứng trượt cho nội dung */
 }
 
-/* ======================== */
-/* 2. Tiêu đề               */
-/* ======================== */
+/* 2. Tiêu đề */
 h1.subject {
     text-align: center;
 }
 
-/* ======================== */
-/* 3. Container             */
-/* ======================== */
+/* 3. Container */
 .container {
     width: 80%;
     margin: 0 auto;
@@ -31,16 +27,12 @@ h1.subject {
     margin: 0 auto;
 }
 
-/* ======================== */
-/* 4. Bố cục linh hoạt      */
-/* ======================== */
+/* 4. Bố cục linh hoạt */
 .flex {
     display: flex;
 }
 
-/* ======================== */
 /* 5. Bảng trên trang index */
-/* ======================== */
 table.table {
     width: 1300px;
     border-collapse: collapse;
@@ -78,9 +70,7 @@ table.table th:nth-child(2) {
     text-align: center;
 }
 
-/* ======================== */
-/* Khung tìm kiếm          */
-/* ======================== */
+/* Khung tìm kiếm */
 .input {
     padding: 10px 14px;
     font-size: 15px;
@@ -110,9 +100,7 @@ table.table th:nth-child(2) {
     background-color: #000000b3;
 }
 
-/* ======================== */
-/* Form tìm kiếm           */
-/* ======================== */
+/* Form tìm kiếm */
 form {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
     padding: 30px 40px;
@@ -135,15 +123,13 @@ form.custom {
     width: 1200px !important;
 }
 
-/* ======================== */
-/* Ảnh sản phẩm            */
-/* ======================== */
+/* Ảnh sản phẩm */
 .product-image img {
     width: 300px;
     border-radius: 10px;
 }
 
-/* Chi tiết sản phẩm       */
+/* Chi tiết sản phẩm */
 .product-detail {
     display: flex;
     flex-decoration: column;
@@ -153,9 +139,7 @@ form.custom {
     flex-grow: 0;
 }
 
-/* ======================== */
-/* Bảng chung              */
-/* ======================== */
+/* Bảng chung */
 table {
     border-collapse: collapse;
     width: 500px;
@@ -166,9 +150,7 @@ table td {
     border: 1px solid #ddd;
 }
 
-/* ======================== */
-/* Nút quay trở lại        */
-/* ======================== */
+/* Nút quay trở lại */
 a.return {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
     color: #ffffff;
@@ -181,72 +163,28 @@ a.return {
     border-radius: 100px;
 }
 
-/* ======================== */
-/* Các nút ở trang chủ     */
-/* ======================== */
+/* Các nút ở trang chủ */
 .button-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0px;
-    display: flex;
-    flex-direction: column; /* Thay đổi thành column để sắp xếp theo chiều dọc */
-    gap: 10px; /* Khoảng cách giữa các nút theo chiều dọc */
-    background-color: black;
-    width: 145px;
-    transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
-    border-radius: 0px;
-    overflow: hidden;
+      list-style: none;
+      padding: 20px 10px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: black;
+      width: 80px; /* Width mặc định */
+      height: 100vh;
+      transition: width 0.1s ease-in-out;
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-radius: 0px 50px 50px 0px;
+      z-index: 9999;
 }
 
-/* Khung các nút khi hover */
-.button-list:hover {
-    width: 280px;
-    border-radius: 0px 50px 50px 0px;
-}
-
-.button-list > ul > li {
-    margin: 0; /* Loại bỏ margin không cần thiết */
-}
-
-/* Chi tiết các nút */
-.button {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
-    color: #ffffff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block; /* Chuyển thành block để mỗi nút chiếm một dòng */
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-bottom: 10px; /* Thêm margin dưới mỗi nút để tạo khoảng cách */
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-}
-
-/* ======================== */
-/* Animation cho nút       */
-/* ======================== */
-.button::before {
-    contentL '\25BA';
-    positionL absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    opacity: 1;
-    transition:opacity 0.3s ease-in-out;
-}
-
-.button:hover:before {
-    opacity: 0;
-}
-
-/* ======================== */
-/* Nút 'ab' tùy chỉnh      */
-/* ======================== */
-.ab {
+/* Nút 'button_add' tùy chỉnh */
+.button_add {
     display: inline-block;
     padding: 15px 32px;
     text-align: center;
@@ -257,11 +195,92 @@ a.return {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
     color: white;
     border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-/* ======================== */
-/* Danh sách sản phẩm      */
-/* ======================== */
+    /* Sidebar mở rộng khi hover */
+.button-list:hover {
+      width: 250px;
+}
+
+    /* Các nút */
+.button {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #49a09d, #a4508b);
+      color: #ffffff;
+      padding: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+}
+
+.button i {
+      min-width: 24px;
+      font-size: 18px;
+      text-align: center;
+      margin-right: 10px;
+}
+
+.button span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button-list:hover .button span {
+    opacity: 1;
+}
+
+    /* Phần admin phân cách */
+.comment {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      margin: 20px 0 10px;
+      white-space: nowrap;
+}
+
+/* Chi tiết các nút */
+.button {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #5f2c82, #49a09d, #5f0a87, #a4508b, #000000);
+    color: #ffffff;
+    height: 50px;
+    padding: 15px 32px;
+    text-align: left; /* Can chữ sang trái */
+    text-decoration: none;
+    display: flex; /* Sử dụng flex để căn chỉnh icon và text */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Thêm margin dưới mỗi nút để tạo khoảng cách */
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+}
+
+/* Animation cho nút */
+.button::before {
+    content: '\25BA';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    opacity: 1;
+    transition: transform 0.3s ease-in-out; /* Thay đổi transition để mượt hơn */
+}
+
+.button:hover::before {
+    transform: translateX(5px) translateY(-50%); /* Di chuyển nhẹ icon khi hover */
+    opacity: 1; /* Đảm bảo icon vẫn hiển thị khi hover */
+}
+
+
+/* Danh sách sản phẩm */
 .product-list {
     list-style: none;
     padding: 0;
@@ -272,9 +291,7 @@ a.return {
     margin-bottom: 5px;
 }
 
-/* ======================== */
-/* Bình luận               */
-/* ======================== */
-.comment {
-    color: white;
+/* Cập nhật CSS cho body khi hover vào sidebar */
+.button-list:hover ~ body {
+    margin-left: 250px; /* Mở rộng khoảng trắng bên trái khi sidebar mở rộng */
 }

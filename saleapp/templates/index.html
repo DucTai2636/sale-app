@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+    <!--  link icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <h1 class="subject">Welcome to my Website</h1>
     <div class="button-list">
         <ul>
-            <li><a href="{{ url_for('product_list') }}"  class="button">Tat ca san pham </a></li>
+            <li><a href="{{ url_for('product_list') }}"  class="button"><span>Tat ca san pham</span> </a></li>
             {% for c in categories %}
-            <li><a href="{{ url_for('product_list', category_id = c.id) }}"  class="button">{{ c.name }}</a></li>
+            <li><a href="{{ url_for('product_list', category_id = c.id) }}"  class="button"><span>{{ c.name }}</span></a></li>
             {% endfor %}
             </ul>
         <ul>
-            <p class="comment">------------->ADMIN<-------------</p>
-        <a href="{{ url_for('add_products') }}" class="ab">Them san pham moi</a>
+            <p class="comment">--------->ADMIN<---------</p>
+        <a href="{{ url_for('add_products') }}" class="button"><span>Them san pham moi</span></a>
             {% for p in products %}
                 <li>{{ p.name }} - Gia tien: {{ p.price }}</li>
             {% endfor %}

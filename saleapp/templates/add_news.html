@@ -41,13 +41,20 @@
             <label for="image">Them anh san pham ( voi ten file: p{id san pham}.jpg):</label>
             <input type="file" id="image" name="image"  accept="image/*"><br>
         </div>
-
-        <button type="submit">Them</button>
+        <div >
+            <button type="submit">Them</button>
+        </div>
     </form>
-    <form method="post">
-        <label>ID: {{ id }}</label><br>
-        <input type="text" name="name" placeholder="Loai san pham"><br>
-        <button type="submit">them</button>
+
+
+    <form>
+        <div>
+            <label style="color: white">ID: {{ id }}</label><br>
+            <input type="text" name="name" placeholder="Loai san pham"><br>
+        </div>
+        <div>
+            <button type="submit">them</button>
+        </div>
     </form>
     <br>
     <a href="{{ url_for('home') }}" class="return">Ve trang chu</a>
