@@ -102,5 +102,13 @@
         "price": 60000000.0,
         "image": "images/14.jpg",
         "category_id": 4
+    },
+    {
+        "id": "15",
+        "name": "Legion 7",
+        "description": "Lenovo, i9-14900HX, RAM: 32GB, SSD: 512GB, RTX4070",
+        "price": 60000000.0,
+        "image": "images/15.jpg",
+        "category_id": 4
     }
 ]
